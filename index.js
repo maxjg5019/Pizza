@@ -15,4 +15,7 @@ const completion = await openai.createChatCompletion({
   
   ],
 });
+const resmessage = completion.data.choices[0].message;
+console.log(resmessage);
+
 console.log(completion.data.choices[0].message);
