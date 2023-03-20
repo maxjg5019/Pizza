@@ -1,0 +1,16 @@
+{
+  "name": "pizza",
+  "version": "1.0.0",
+  "description": "for 199 pizza",
+  "main": "main.js",
+  "scripts": {
+    "test": "run"
+  },
+  "author": "maxjg",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "openai": "^3.2.1"
+  }
+}
