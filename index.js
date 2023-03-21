@@ -1,21 +1,22 @@
 const { Configuration, OpenAIApi } = require("openai");
-const axios = require ('axios')
-require('dotenv').config();
+const axios = require("axios");
+const { error } = require("console");
+require("dotenv").config();
 // var test = process.env.OPENAI_API_KEY
 
 const configuration = new Configuration({
-  apiKey : process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
-const completion = await openai.createChatCompletion({
-  model: "gpt-3.5-turbo",
-  messages: [
-    {role: "user", content: "Hello world"}
-  
-  ],
-});
-const resmessage = completion.data.choices[0].message;
-console.log(resmessage);
+const ChatGo = async (prompt) => {
+  const Res = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: prompt }],
+  });
+  const resmessage = Res.data.choices[0].message;
+  console.log(resmessage);
 
-console.log(completion.data.choices[0].message);
+  console.log(Res.data.choices[0].message);
+};
+ChatGo("請使用繁體中文回答");
